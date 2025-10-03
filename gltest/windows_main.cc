@@ -6,8 +6,9 @@
 #define SCR_WIDTH 800
 #define SCR_HEIGHT 600
 
+
 int main(){
-    fg_utils::CreateDebugConsole();
+    // fg_utils::CreateDebugConsole();
     auto window = fg_window::Window(L"Game", SCR_WIDTH, SCR_HEIGHT);
     Render render;
 
@@ -17,11 +18,11 @@ int main(){
             std::cout << "Main Loop Get Event: "
                     << event.type << std::endl;
         }
-        float time = fg_utils::GetTime();
-        // glClearColor(0.0, sin(time), 0.0, 1.0);
-        // glClear(GL_COLOR_BUFFER_BIT);
+
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
         render.Draw();
         window.SwapBuffer();
-
     }
 }
